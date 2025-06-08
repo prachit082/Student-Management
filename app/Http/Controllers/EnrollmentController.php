@@ -5,6 +5,8 @@ use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Response;
 use App\Models\Enrollment;
+use App\Models\Batch;
+use App\Models\Student;
 use Illuminate\View\View;
 
 class EnrollmentController extends Controller
@@ -23,7 +25,10 @@ class EnrollmentController extends Controller
      */
     public function create(): View
     {
-        return view('enrollments.create');
+        $batches = Batch::pluck('name', 'id');
+        $students = Student::pluck('name', 'id');
+        return view('enrollments.create', compact('batches','students'));
+        // return view('enrollments.create');
     }
 
     /**
@@ -51,7 +56,9 @@ class EnrollmentController extends Controller
     public function edit(string $id): View
     {
         $enrollment = Enrollment::find($id);
-        return view('enrollments.edit')->with('enrollments', $enrollment);
+        $batches = Batch::pluck('name', 'id');
+        $students = Student::pluck('name', 'id');
+        return view('enrollments.edit', compact('enrollment','batches','students'));
     }
 
     /**
