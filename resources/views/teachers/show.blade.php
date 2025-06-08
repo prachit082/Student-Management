@@ -3,7 +3,7 @@
  
  
 <div class="card">
-  <div class="card-header">Teachers Page</div>
+  <div class="card-header">Teachers</div>
   <div class="card-body">
    
  

@@ -2,7 +2,7 @@
 @section('content')
  
 <div class="card">
-  <div class="card-header">Edit Page</div>
+  <div class="card-header">Edit Teacher Details</div>
   <div class="card-body">
       
       <form action="{{ url('teachers/' .$teachers->id) }}" method="post">

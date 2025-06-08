@@ -2,7 +2,7 @@
 @section('content')
  
 <div class="card">
-  <div class="card-header">Edit Batch</div>
+  <div class="card-header">Edit Batch Details</div>
   <div class="card-body">
       
       <form action="{{ url('batches/' .$batches->id) }}" method="post">

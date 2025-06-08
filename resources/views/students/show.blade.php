@@ -3,7 +3,7 @@
  
  
 <div class="card">
-  <div class="card-header">Students Page</div>
+  <div class="card-header">Students</div>
   <div class="card-body">
    
  
