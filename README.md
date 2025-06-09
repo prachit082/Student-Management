@@ -1,17 +1,29 @@
-# Student Management App
+# 🎓 Student Management - Laravel 12
 
 A web-based Student Management System built with **Laravel 12** that allows administrators to efficiently manage students, their details, and academic records.
 
 ---
 
+## 👥 Main Modules
+
+- 🗂️ Student
+- 🗂️ Teacher
+- 🗂️ Courses
+- 🗂️ Batches
+- 🗂️ Enrollments
+- 🗂️ Payments
+
+---
+
 ## 🚀 Features
 
-- ✅ Add, view, update, and delete student records
-- ✅ Manage class/grade assignments
-- ✅ Track subjects and performance
-- ✅ Search & filter student data
-- ✅ Responsive UI for desktop and mobile
-- ✅ Built with Laravel 12 & Bootstrap/Tailwind (customizable)
+- ✅ Student's records CRUD
+- ✅ Teacher's records CRUD
+- ✅ Available courses CRUD
+- ✅ Student's batches CRUD
+- ✅ Student's enrollment CRUD
+- ✅ Student-admission payment CRUD
+- ✅ Payment receipt View & Download
 
 ---
 
