@@ -1,6 +1,6 @@
 # 🎓 Student Management - Laravel 12
 
-A web-based Student Management System built with **Laravel 12** that allows administrators to efficiently manage students, their details, and academic records.
+A web-based Student Management System built with **Laravel 12** that allows to efficiently manage students, teachers, their details, and other records.
 
 ---
 
