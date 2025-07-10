@@ -30,7 +30,8 @@ RUN chown -R www-data:www-data /var/www \
 EXPOSE 8000
 
 RUN cp .env.example .env && \
-    php artisan config:clear && \
+    composer install --optimize-autoloader --no-dev && \
+    php artisan key:generate && \
     php artisan config:cache
 
 CMD php -S 0.0.0.0:8000 -t public

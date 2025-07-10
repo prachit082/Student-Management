@@ -10,7 +10,7 @@ services:
       - key: APP_ENV
         value: production
       - key: APP_KEY
-        value: base64:uKW2AOvz/G0V0aBoAFIt2Q64K0sBL7wtw18maJX+f50=
+        generateValue: true
       - key: DB_CONNECTION
         value: mysql
       - key: DB_HOST
