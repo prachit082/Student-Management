@@ -29,20 +29,10 @@ RUN chown -R www-data:www-data /var/www \
 
 EXPOSE 8000
 
-# Build the .env file dynamically using environment variables from Render
-RUN echo "APP_NAME=SMS" > .env && \
-    echo "APP_ENV=${APP_ENV}" >> .env && \
-    echo "APP_KEY=${APP_KEY}" >> .env && \
-    echo "APP_DEBUG=false" >> .env && \
-    echo "APP_URL=https://$RENDER_EXTERNAL_HOSTNAME" >> .env && \
-    echo "DB_CONNECTION=${DB_CONNECTION}" >> .env && \
-    echo "DB_HOST=${DB_HOST}" >> .env && \
-    echo "DB_PORT=${DB_PORT}" >> .env && \
-    echo "DB_DATABASE=${DB_DATABASE}" >> .env && \
-    echo "DB_USERNAME=${DB_USERNAME}" >> .env && \
-    echo "DB_PASSWORD=${DB_PASSWORD}" >> .env && \
-    composer install --optimize-autoloader --no-dev && \
+CMD ["/bin/sh", "-c", "\
+    cp .env.example .env && \
     php artisan config:clear && \
-    php artisan config:cache
+    php artisan config:cache && \
+    php artisan serve --host=0.0.0.0 --port=8000 \
+"]
 
-CMD php -S 0.0.0.0:8000 -t public
