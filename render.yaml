@@ -15,3 +15,5 @@ services:
         value: sqlite
       - key: DB_DATABASE
         value: /var/www/database/database.sqlite
+      - key: APP_KEY
+        value: base64:Iwms/cgpO8iwTpfyjh2qJ9va7eFbhGwV9O0fjWvmVC4=

@@ -20,19 +20,20 @@ WORKDIR /var/www
 
 COPY . .
 
-# Create SQLite database file
+# Create database directory if using SQLite (you can skip this if only using MySQL)
 RUN mkdir -p /var/www/database && touch /var/www/database/database.sqlite
 
 # Install dependencies
 RUN composer install --optimize-autoloader --no-dev
 
-# Set Laravel permissions
+# Laravel permissions
 RUN chown -R www-data:www-data /var/www \
     && chmod -R 755 /var/www/storage
 
-# Cache config using env variables from Render (not from .env)
-RUN php artisan config:clear && php artisan config:cache
-
 EXPOSE 8000
 
-CMD php -S 0.0.0.0:8000 -t public
+# Run artisan commands at runtime instead
+CMD php artisan config:clear && \
+    php artisan config:cache && \
+    php artisan migrate --force && \
+    php -S 0.0.0.0:8000 -t public
